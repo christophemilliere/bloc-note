@@ -12,6 +12,10 @@
 		F87372971F93CC0000EE9AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87372951F93CC0000EE9AFC /* Main.storyboard */; };
 		F87372991F93CC0000EE9AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87372981F93CC0000EE9AFC /* Assets.xcassets */; };
 		F873729C1F93CC0000EE9AFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F873729A1F93CC0000EE9AFC /* LaunchScreen.storyboard */; };
+		F8A407D31F9A136D00FF34F7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F8A407D21F9A136D00FF34F7 /* .gitignore */; };
+		F8B50D311F977540006288A7 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B50D301F977540006288A7 /* NotesTableViewController.swift */; };
+		F8B50D331F977705006288A7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B50D321F977705006288A7 /* Note.swift */; };
+		F8B50D351F977732006288A7 /* NoteBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B50D341F977732006288A7 /* NoteBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F87372981F93CC0000EE9AFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F873729B1F93CC0000EE9AFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F873729D1F93CC0000EE9AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A407D21F9A136D00FF34F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F8B50D301F977540006288A7 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		F8B50D321F977705006288A7 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		F8B50D341F977732006288A7 /* NoteBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 		F87372851F93CC0000EE9AFC = {
 			isa = PBXGroup;
 			children = (
+				F8A407D21F9A136D00FF34F7 /* .gitignore */,
 				F87372901F93CC0000EE9AFC /* Bloc-note */,
 				F873728F1F93CC0000EE9AFC /* Products */,
 			);
@@ -55,13 +64,32 @@
 			isa = PBXGroup;
 			children = (
 				F87372911F93CC0000EE9AFC /* AppDelegate.swift */,
-				F87372931F93CC0000EE9AFC /* ViewController.swift */,
+				F8B50D371F9777BE006288A7 /* Controllers */,
 				F87372951F93CC0000EE9AFC /* Main.storyboard */,
 				F87372981F93CC0000EE9AFC /* Assets.xcassets */,
 				F873729A1F93CC0000EE9AFC /* LaunchScreen.storyboard */,
 				F873729D1F93CC0000EE9AFC /* Info.plist */,
+				F8B50D361F9777A7006288A7 /* Models */,
 			);
 			path = "Bloc-note";
+			sourceTree = "<group>";
+		};
+		F8B50D361F9777A7006288A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8B50D321F977705006288A7 /* Note.swift */,
+				F8B50D341F977732006288A7 /* NoteBook.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8B50D371F9777BE006288A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F87372931F93CC0000EE9AFC /* ViewController.swift */,
+				F8B50D301F977540006288A7 /* NotesTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A407D31F9A136D00FF34F7 /* .gitignore in Resources */,
 				F873729C1F93CC0000EE9AFC /* LaunchScreen.storyboard in Resources */,
 				F87372991F93CC0000EE9AFC /* Assets.xcassets in Resources */,
 				F87372971F93CC0000EE9AFC /* Main.storyboard in Resources */,
@@ -137,7 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87372941F93CC0000EE9AFC /* ViewController.swift in Sources */,
+				F8B50D351F977732006288A7 /* NoteBook.swift in Sources */,
 				F87372921F93CC0000EE9AFC /* AppDelegate.swift in Sources */,
+				F8B50D311F977540006288A7 /* NotesTableViewController.swift in Sources */,
+				F8B50D331F977705006288A7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
