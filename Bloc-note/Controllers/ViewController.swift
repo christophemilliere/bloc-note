@@ -9,10 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var currentNote: Note?
+    @IBOutlet weak var titleTextfield: UITextField!
+    
+    @IBOutlet weak var fulltext: UITextView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        guard let note = currentNote else { return }
+        titleTextfield.text = note.titre
+        fulltext.text = note.contenu
+        title = note.titre
+        navigationItem.largeTitleDisplayMode = .always
     }
 
     override func didReceiveMemoryWarning() {

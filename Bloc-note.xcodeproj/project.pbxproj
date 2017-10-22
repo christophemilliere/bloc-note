@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1555CBD1F9CB1E100A07430 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1555CBC1F9CB1E100A07430 /* NoteTableViewCell.swift */; };
 		F87372921F93CC0000EE9AFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87372911F93CC0000EE9AFC /* AppDelegate.swift */; };
 		F87372941F93CC0000EE9AFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87372931F93CC0000EE9AFC /* ViewController.swift */; };
 		F87372971F93CC0000EE9AFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87372951F93CC0000EE9AFC /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1555CBC1F9CB1E100A07430 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		F873728E1F93CC0000EE9AFC /* Bloc-note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloc-note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87372911F93CC0000EE9AFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F87372931F93CC0000EE9AFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,9 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1555CBE1F9CB1EA00A07430 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1555CBC1F9CB1E100A07430 /* NoteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F87372851F93CC0000EE9AFC = {
 			isa = PBXGroup;
 			children = (
+				C1555CBE1F9CB1EA00A07430 /* Views */,
 				F8A407D21F9A136D00FF34F7 /* .gitignore */,
 				F87372901F93CC0000EE9AFC /* Bloc-note */,
 				F873728F1F93CC0000EE9AFC /* Products */,
@@ -170,6 +181,7 @@
 				F87372921F93CC0000EE9AFC /* AppDelegate.swift in Sources */,
 				F8B50D311F977540006288A7 /* NotesTableViewController.swift in Sources */,
 				F8B50D331F977705006288A7 /* Note.swift in Sources */,
+				C1555CBD1F9CB1E100A07430 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
