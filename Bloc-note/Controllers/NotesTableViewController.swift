@@ -9,17 +9,25 @@
 import UIKit
 
 class NotesTableViewController: UITableViewController {
-    var book = NoteBook()
-
+    var book: NoteBook?
+    @IBAction func saveAction(_ sender: Any) {
+        save()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1...10 {
-            let note = Note()
-            note.titre = "Ma premier note \(i)"
-            note.contenu = "Ma premier note description \(i)"
-            book.add(note: note)
+        if let notebook = read() {
+            book = notebook
+        } else {
+            book = NoteBook()
+            for i in 1...10 {
+                let note = Note()
+                note.titre = "Ma premier note \(i)"
+                note.contenu = "Ma premier note description \(i)"
+                book?.add(note: note)
+            }
         }
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         
         
@@ -35,7 +43,7 @@ class NotesTableViewController: UITableViewController {
         let note = Note()
         note.titre = "Nouveau contenu"
         
-        book.add(note: note)
+        book?.add(note: note)
         tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -52,17 +60,42 @@ class NotesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return book.listNotes().count
+        return book!.listNotes().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as? NoteTableViewCell else {
             fatalError("UNe mauvaise cellule")
         }
-        cell.configure(whit: book.listNotes()[indexPath.row])
+        cell.configure(whit: book!.listNotes()[indexPath.row])
 
         return cell
     }
+    
+    
+    func save(){
+        guard let json = try? JSONEncoder().encode(book) else { return }
+        guard let documentFolderUrl = documentFolderUrl() else { return }
+        let jsonUrl = documentFolderUrl.appendingPathComponent("notebook.json")
+        try? json.write(to: jsonUrl)
+        
+    }
+    
+    func read() -> NoteBook? {
+        guard let documentFolderUrl = documentFolderUrl() else { return nil }
+        let jsonUrl = documentFolderUrl.appendingPathComponent("notebook.json")
+        guard let dataRead = try? Data(contentsOf: jsonUrl) else { return nil }
+        
+        return try? JSONDecoder().decode(NoteBook.self, from: dataRead)
+    }
+    
+    func documentFolderUrl() -> URL? {
+        let manager = FileManager.default
+        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        
+        return url
+    }
+    
 
 
     
@@ -77,7 +110,7 @@ class NotesTableViewController: UITableViewController {
             guard let destination = segue.destination as? ViewController else { return }
             guard let cell = sender as? UITableViewCell else { return }
             guard let indexPath = tableView.indexPath(for: cell) else { return }
-            destination.currentNote = book.listNotes()[indexPath.row]
+            destination.currentNote = book!.listNotes()[indexPath.row]
 //            if  {
 //                let notes = segue.destination as! ViewController
 //            }

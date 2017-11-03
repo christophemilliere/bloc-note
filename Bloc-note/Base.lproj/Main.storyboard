@@ -93,6 +93,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="TMT-CK-C3r">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="9L7-29-KGD">
+                            <connections>
+                                <action selector="saveAction:" destination="Ykr-1Q-HjS" id="fCj-6o-tGX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="V5E-Of-ti2">
                             <connections>
                                 <action selector="addTitle:" destination="Ykr-1Q-HjS" id="hG6-NW-dFa"/>

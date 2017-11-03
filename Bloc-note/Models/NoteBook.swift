@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class NoteBook {
+class NoteBook: Codable {
     
     var notes: [Note] = []
     

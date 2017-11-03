@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Note {
+class Note: Codable {
     var titre: String = ""
     var contenu: String = ""
     var modificationDate: Date = Date()
